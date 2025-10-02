@@ -1,0 +1,173 @@
+﻿@model VoNguyenHoangKim.Service.ValidateSend.NewsArticleRequest
+
+@{
+    ViewData["Title"] = "Edit News";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4"> Edit News</h2>
+    <form asp-action="EditNews" method="post">
+        <input type="hidden" asp-for="AccountId" value="@ViewBag.AccountId" />
+        <input type="hidden" asp-for="UpdatedById" value="@ViewBag.AccountId" />
+
+        <div class="mb-3">
+            <label asp-for="Title" class="form-label">Title <span class="text-danger">*</span></label>
+            <input type="text" asp-for="Title" class="form-control" placeholder="Enter article title" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Headline" class="form-label">Headline</label>
+            <input type="text" asp-for="Headline" class="form-control" placeholder="Enter headline (optional)" />
+            <span asp-validation-for="Headline" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Content" class="form-label">Content <span class="text-danger">*</span></label>
+            <textarea asp-for="Content" class="form-control" rows="8" placeholder="Write your article content here..."></textarea>
+            <span asp-validation-for="Content" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="NewsSource" class="form-label">News Source</label>
+            <input type="text" asp-for="NewsSource" class="form-control" placeholder="Enter news source (optional)" />
+            <span asp-validation-for="NewsSource" class="text-danger"></span>
+        </div>
+
+@*         <div class="mb-3">
+            <label asp-for="ModifiedDate" class="form-label">Modified Date</label>
+            <div class="form-control" style="background-color: #f8f9fa; cursor: not-allowed;">
+                @(Model.ModifiedDate?.ToString("dd/MM/yyyy") ?? "N/A")
+            </div>
+            <input type="hidden" asp-for="ModifiedDate" value="@(Model.ModifiedDate?.ToString("o"))" />
+        </div> *@
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="CategoryId" class="form-label">Category <span class="text-danger">*</span></label>
+                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories">
+                        <option value="">Select Category</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label asp-for="Status" class="form-label">Status <span class="text-danger">*</span></label>
+                    <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<VoNguyenHoangKim.Common.Enums.Status>()">
+                        <option value="">Select Status</option>
+                    </select>
+                    <span asp-validation-for="Status" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3">
+                <label asp-for="TagIds" class="form-label">Tags</label>
+                <select asp-for="TagIds" class="form-select" multiple asp-items="ViewBag.Tags" style="min-height: 120px;">
+                </select>
+                <small class="form-text">Hold Ctrl to select multiple tags</small>
+                <span asp-validation-for="TagIds" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-action="ManageNews" class="btn btn-cancel">
+                <i class="pi pi-times"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-secondary" style="background-color: #3F6C45; color: #FFFFFF">
+                <i class="pi pi-save"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 900px;
+        margin: 20px auto;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+    }
+
+    .form-control, .form-select {
+        border-radius: 8px;
+        border: 1px solid var(--color-primary);
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: 0 0 6px rgba(63,108,69,0.2);
+        }
+
+        .form-control[readonly] {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: end;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            transform: translateY(-1px);
+        }
+
+    .form-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <partial name="_ValidationScriptsPartial" />
+}

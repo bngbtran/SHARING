@@ -1,0 +1,202 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model IEnumerable<VoNguyenHoangKim.Service.ValidateReceive.TagResponse>
+
+@{
+    ViewData["Title"] = "Manage Tags";
+}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <h2>Tag List</h2>
+    <a asp-action="CreateTag" class="btn-create">
+        <i class="pi pi-plus"></i> Create
+    </a>
+</div>
+
+<div class="manage-categories-card">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form asp-action="Index" method="get">
+                <div class="input-group search-bar">
+                    <input type="text" name="search" class="form-control"
+                           placeholder="Search tags"
+                           value="@ViewData["CurrentSearch"]" />
+                    <button type="submit" class="btn btn-primary">
+                        <i class="pi pi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Tag Name</th>
+                <th style="width: 150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+            }
+            @foreach (var tag in Model)
+            {
+                <tr>
+                    <td>@index</td>
+                    <td class="fw-semibold">@tag.Tag.Name</td>
+                    <td class="text-center">
+                        <a asp-action="EditTag" asp-route-id="@tag.Tag.Id" class="btn-icon btn-edit" title="Edit">
+                            <i class="pi pi-pencil"></i>
+                        </a>
+                        <form asp-action="DeleteTag" asp-route-id="@tag.Tag.Id" method="post" style="display:inline-block;">
+                            <button type="submit" class="btn-icon btn-delete"
+                                    onclick="return confirm('Are you sure you want to delete this tag ???')" title="Delete">
+                                <i class="pi pi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+
+    @if (!Model.Any())
+    {
+        <div class="no-data text-center">
+            <i class="pi pi-tags text-muted mb-3" style="font-size:2rem;"></i>
+            <p class="text-muted">No tags found.</p>
+        </div>
+    }
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+        .page-header h2 {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+    .btn-create {
+        background: var(--color-primary);
+        color: var(--color-text-light);
+        border: none;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    /* Card */
+    .manage-categories-card {
+        padding: 2px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Table */
+    .table-modern {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+        .table-modern thead {
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .table-modern th, .table-modern td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table-modern th {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table-modern tbody tr:hover {
+            background-color: rgba(63,108,69,0.08);
+        }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+        background: transparent;
+        color: var(--color-primary);
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        border-color: #4897d8;
+        color: #4897d8;
+    }
+
+        .btn-edit:hover {
+            background: #4897d8;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .btn-delete {
+        border-color: #dc3545;
+        color: #dc3545;
+    }
+
+        .btn-delete:hover {
+            background: #dc3545;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .search-bar input.form-control {
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar button {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .no-data {
+        padding: 40px 0;
+        border-radius: 8px;
+        background: #f8f9fa;
+    }
+</style>

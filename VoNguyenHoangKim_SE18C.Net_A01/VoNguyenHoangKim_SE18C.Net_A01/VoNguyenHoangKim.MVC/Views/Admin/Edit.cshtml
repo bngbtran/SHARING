@@ -1,0 +1,102 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model VoNguyenHoangKim.Service.ValidateSend.AccountEditRequest
+
+@{
+    ViewData["Title"] = "Edit Account";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Edit Account</h2>
+    <form asp-action="Edit" method="post">
+        <input type="hidden" asp-for="Id" value="@ViewBag.AccountId" />
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" placeholder="Input Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label">Full Name</label>
+            <input asp-for="FullName" class="form-control" placeholder="Input Full Name" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Role" class="form-label">Role</label>
+            <select asp-for="Role" class="form-control" asp-items="Html.GetEnumSelectList<Role>()" style="cursor:pointer;"></select>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-action="Index" class="btn btn-cancel">
+                <i class="pi pi-times"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-secondary" style="background-color:#3F6C45; color:#FFFFFF">
+                <i class="pi pi-save"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+    /* Dùng giống style Create User */
+    .create-card {
+        border-radius: 12px;
+        background: #FFFFFF;
+        padding: 25px;
+        max-width: 600px;
+        margin: 20px auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: #3F6C45;
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: #3F6C45;
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus {
+            border-color: #3F6C45;
+            outline: none;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+            transform: translateY(-1px);
+        }
+</style>

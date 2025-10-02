@@ -1,0 +1,126 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model VoNguyenHoangKim.Service.ValidateSend.CategoryRequest
+
+@{
+    ViewData["Title"] = "Create Category";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Create Category</h2>
+    <form asp-action="CreateCategory" method="post">
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Name</label>
+            <input asp-for="Name" class="form-control" placeholder="Input Category Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <input asp-for="Description" class="form-control" placeholder="Input Description" />
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Status" class="form-label">Status</label>
+            <select asp-for="Status" class="form-control" asp-items="Html.GetEnumSelectList<Status>()" style="cursor: pointer;"></select>
+            <span asp-validation-for="Status" class="text-danger"></span>
+        </div>
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-action="Index" class="btn btn-cancel">
+                <i class="pi pi-times"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-secondary" style="background-color: #3F6C45; color: #FFFFFF">
+                <i class="pi pi-save"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-outline-primary {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+
+    .btn-outline-secondary {
+        border: 1px solid #6c757d;
+        color: #6c757d;
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+            transform: translateY(-1px);
+        }
+</style>

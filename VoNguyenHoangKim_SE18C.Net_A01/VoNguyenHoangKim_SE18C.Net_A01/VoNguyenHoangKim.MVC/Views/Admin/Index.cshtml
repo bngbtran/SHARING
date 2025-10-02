@@ -1,0 +1,191 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model IEnumerable<VoNguyenHoangKim.Service.ValidateReceive.AccountResponse>
+
+@{
+    ViewData["Title"] = "Manage Accounts";
+}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <h2>Account List</h2>
+    <a asp-action="Create" class="btn-create">
+        <i class="pi pi-user-plus"></i> Create
+    </a>
+</div>
+
+<div class="manage-accounts-card">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form asp-action="Index" method="get">
+                <div class="input-group search-bar">
+                    <input type="text" name="search" class="form-control"
+                           placeholder="Search accounts"
+                           value="@ViewData["CurrentSearch"]" />
+                    <button type="submit" class="btn btn-primary">
+                        <i class="pi pi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>#</th> 
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Role</th>
+                <th style="width: 120px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+            }
+            @foreach (var account in Model)
+            {
+                <tr>
+                    <td>@index</td>
+                    <td>@account.Account.Email</td>
+                    <td>@account.Account.FullName</td>
+                    <td>@((Role)account.Account.Role)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@account.Account.Id" class="btn-icon btn-edit" title="Edit">
+                            <i class="pi pi-pencil"></i>
+                        </a>
+                        <form asp-action="Delete" asp-route-id="@account.Account.Id" method="post" style="display:inline-block;">
+                            <button type="submit" class="btn-icon btn-delete" onclick="return confirm('Are you sure you want to delete this account ???')" title="Delete">
+                                <i class="pi pi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    .page-header h2 {
+        font-weight: 700;
+        color: var(--color-primary);
+        margin: 0;
+        font-size: 1.8rem;
+    }
+
+    .btn-create {
+        background: var(--color-primary);
+        color: var(--color-text-light);
+        border: none;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+    /* Card */
+    .manage-accounts-card {
+        padding: 2px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Table */
+    .table-modern {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+    .table-modern thead {
+        background: var(--color-primary);
+        color: var(--color-text-light);
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .table-modern th, .table-modern td {
+        padding: 14px 20px;
+        border-bottom: 1px solid #e9ecef;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .table-modern th {
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .table-modern tbody tr:hover {
+        background-color: rgba(63,108,69,0.08);
+    }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+        background: transparent;
+        color: var(--color-primary);
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .btn-edit {
+        border-color: #4897d8;
+        color: #4897d8;
+    }
+
+        .btn-edit:hover {
+            background: #4897d8;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .btn-delete {
+        border-color: #dc3545;
+        color: #dc3545;
+    }
+
+        .btn-delete:hover {
+            background: #dc3545;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .search-bar input.form-control {
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar button {
+        border-radius: 0 8px 8px 0;
+    }
+</style>

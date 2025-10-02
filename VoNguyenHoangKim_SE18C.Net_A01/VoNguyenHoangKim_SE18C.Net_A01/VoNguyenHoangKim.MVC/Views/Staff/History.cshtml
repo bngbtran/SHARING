@@ -1,0 +1,240 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model IEnumerable<VoNguyenHoangKim.Service.ValidateReceive.NewsArticleResponse>
+
+@{
+    ViewData["Title"] = "History";
+}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <h2>Article History</h2>
+    <a asp-action="CreateNews" class="btn-create">
+        <i class="pi pi-plus"></i> Create
+    </a>
+</div>
+
+<div class="manage-categories-card">
+    @if (Model != null && Model.Any())
+    {
+        <div class="row mb-4">
+            <div class="col-md-12">
+                <form asp-action="History" method="get">
+                    <div class="input-group search-bar">
+                        <input type="text" name="search" class="form-control"
+                               placeholder="Search articles"
+                               value="@ViewData["CurrentSearch"]" />
+                        <button type="submit" class="btn btn-primary">
+                            <i class="pi pi-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table-modern">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Created Date</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th style="width: 150px;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var index = 1;
+                    }
+                    @foreach (var article in Model)
+                    {
+                        var statusClass = article.NewsArticle.Status switch
+                        {
+                            Status.Active => "status-active",
+                            Status.Inactive => "status-inactive",
+                            _ => "status-neutral"
+                        };
+                        <tr>
+                            <td>@index</td>
+                            <td class="fw-semibold">@article.NewsArticle.Title</td>
+                            <td>@article.NewsArticle.CreatedDate.ToString("dd/MM/yyyy")</td>
+                            <td>@article.NewsArticle.CategoryName</td>
+                            <td>
+                                <span class="@statusClass">@article.NewsArticle.Status</span>
+                            </td>
+                            <td class="text-center">
+                                <a asp-action="Details" asp-route-id="@article.NewsArticle.Id"
+                                   class="btn-icon btn-info" title="View Details">
+                                    <i class="pi pi-eye"></i>
+                                </a>
+                            </td>
+                        </tr>
+                        index++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="no-data text-center">
+            <i class="pi pi-history text-muted mb-3" style="font-size:2rem;"></i>
+            <p class="text-muted mb-2">No articles created yet.</p>
+            <a asp-action="CreateNews" class="btn btn-primary">
+                <i class="pi pi-plus me-2"></i>Create Your First Article
+            </a>
+        </div>
+    }
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+        .page-header h2 {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+    .btn-create {
+        background: var(--color-primary);
+        color: var(--color-text-light);
+        border: none;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 600;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+        .btn-create:hover {
+            background: #2e5234;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+    .manage-categories-card {
+        padding: 2px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .table-modern {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+        .table-modern thead {
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .table-modern th, .table-modern td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table-modern th {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table-modern tbody tr:hover {
+            background-color: rgba(63,108,69,0.08);
+        }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+        background: transparent;
+        color: var(--color-primary);
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+    }
+
+    .btn-info {
+        border-color: #17a2b8;
+        color: #17a2b8;
+    }
+
+        .btn-info:hover {
+            background: #17a2b8;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .search-bar input.form-control {
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar button {
+        border-radius: 0 8px 8px 0;
+    }
+
+    .status-active {
+        color: #00FF00;
+        font-weight: 600;
+    }
+
+    .status-inactive {
+        color: #DD0000;
+        font-weight: 600;
+    }
+
+    .status-neutral {
+        color: #6c757d;
+        font-weight: 600;
+    }
+
+    .no-data {
+        padding: 40px 0;
+        border-radius: 8px;
+        background: #f8f9fa;
+    }
+
+    @@media (max-width: 768px) {
+        .table-modern th, .table-modern td {
+            padding: 10px;
+            font-size: 0.9rem;
+        }
+
+        .btn-info {
+            padding: 6px 12px;
+            font-size: 0.85rem;
+        }
+    }
+</style>

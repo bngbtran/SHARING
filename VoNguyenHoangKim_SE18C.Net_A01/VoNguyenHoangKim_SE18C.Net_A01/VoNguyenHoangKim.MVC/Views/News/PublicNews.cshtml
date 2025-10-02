@@ -1,0 +1,199 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model IEnumerable<VoNguyenHoangKim.Service.ValidateReceive.NewsArticleResponse>
+
+@{
+    ViewData["Title"] = "News";
+}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <h2>News List</h2>
+</div>
+
+<div class="manage-accounts-card">
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <form asp-action="PublicNews" method="get">
+                <div class="input-group search-bar">
+                    <input type="text" name="search" class="form-control"
+                           placeholder="Search news"
+                           value="@ViewData["CurrentSearch"]" />
+                    <button type="submit" class="btn btn-primary">
+                        <i class="pi pi-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <table class="table-modern">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Headline</th>
+                <th>Source</th>
+                <th>Created Date</th>
+                <th>Status</th>
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                var index = 1;
+            }
+            @foreach (var article in Model)
+            {
+                <tr>
+                    <td>@index</td>
+                    <td class="fw-semibold">@article.NewsArticle.Title</td>
+                    <td>@(article.NewsArticle.Headline?.Length > 50 ? article.NewsArticle.Headline.Substring(0, 50) + "..." : article.NewsArticle.Headline)</td>
+                    <td>@(article.NewsArticle.NewsSource ?? "N/A")</td>
+                    <td>@article.NewsArticle.CreatedDate.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <span class="@(article.NewsArticle.Status == Status.Active ? "status-active" : "status-inactive")">
+                            @article.NewsArticle.Status
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <a asp-action="PublicDetails" asp-route-id="@article.NewsArticle.Id"
+                           class="btn-icon btn-info">
+                            <i class="pi pi-eye"></i>
+                        </a>
+                    </td>
+                </tr>
+                index++;
+            }
+        </tbody>
+    </table>
+
+    @if (!Model.Any())
+    {
+        <div class="no-data text-center">
+            <i class="pi pi-newspaper text-muted mb-3" style="font-size:2rem;"></i>
+            <p class="text-muted">No active news found.</p>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+}
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .page-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+        .page-header h2 {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+    /* Card */
+    .manage-accounts-card {
+        padding: 2px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Table */
+    .table-modern {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        font-size: 0.95rem;
+        border-radius: 8px;
+    }
+
+        .table-modern thead {
+            background: var(--color-primary);
+            color: var(--color-text-light);
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .table-modern th, .table-modern td {
+            padding: 14px 20px;
+            border-bottom: 1px solid #e9ecef;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .table-modern th {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .table-modern tbody tr:hover {
+            background-color: rgba(63,108,69,0.08);
+        }
+
+    .btn-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--color-primary);
+        background: transparent;
+        color: var(--color-primary);
+        font-size: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .btn-info {
+        border-color: #17a2b8;
+        color: #17a2b8;
+        text-decoration: none;
+    }
+
+        .btn-info:hover {
+            background: #17a2b8;
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+    .status-active {
+        color: #00FF00;
+        font-weight: 600;
+    }
+
+    .status-inactive {
+        color: #DD0000;
+        font-weight: 600;
+    }
+
+    .no-data {
+        padding: 40px 0;
+        border-radius: 8px;
+        background-color: rgba(63,108,69,0.08);
+        text-align: center;
+        color: var(--color-primary);
+    }
+
+    .search-bar input.form-control {
+        border-radius: 8px 0 0 8px;
+        border: 1px solid #ccc;
+    }
+
+    .search-bar button {
+        border-radius: 0 8px 8px 0;
+    }
+</style>

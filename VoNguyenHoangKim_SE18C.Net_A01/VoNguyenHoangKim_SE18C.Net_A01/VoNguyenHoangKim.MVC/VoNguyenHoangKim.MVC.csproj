@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Home\Index.cshtml" />
+    <None Include="Views\Home\Privacy.cshtml" />
+    <None Include="Views\Shared\Error.cshtml" />
+    <None Include="Views\Shared\_Layout.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VoNguyenHoangKim.Common\VoNguyenHoangKim.Common.csproj" />
+    <ProjectReference Include="..\VoNguyenHoangKim.Data\VoNguyenHoangKim.Data.csproj" />
+    <ProjectReference Include="..\VoNguyenHoangKim.Service\VoNguyenHoangKim.Service.csproj" />
+  </ItemGroup>
+
+</Project>

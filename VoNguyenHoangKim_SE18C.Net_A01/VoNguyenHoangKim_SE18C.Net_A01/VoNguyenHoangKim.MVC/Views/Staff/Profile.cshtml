@@ -1,0 +1,140 @@
+﻿@using VoNguyenHoangKim.Common.Enums
+@model VoNguyenHoangKim.Service.ValidateSend.AccountEditRequest
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Profile Settings</h2>
+    <form asp-action="Profile" method="post">
+        <input type="hidden" asp-for="Id" />
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Email Address</label>
+            <input asp-for="Email" class="form-control" readonly />
+            <small class="form-text"><i class="fas fa-lock me-1"></i>Email cannot be changed</small>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="FullName" class="form-label">Full Name</label>
+            <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" type="password" class="form-control"
+                   placeholder="Leave blank to keep current password" />
+            <small class="form-text"><i class="fas fa-info-circle me-1"></i>Only enter a password if you want to change it</small>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Role" class="form-label">Role</label>
+            <input type="text" class="form-control" value="@((Role)Model.Role)" readonly />
+            <input type="hidden" asp-for="Role" />
+            <small class="form-text"><i class="fas fa-lock me-1"></i>Role cannot be changed</small>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-action="Index" class="btn btn-cancel">
+                <i class="pi pi-times"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-secondary" style="background-color: #3F6C45; color: #FFFFFF">
+                <i class="pi pi-save"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+
+        .form-control[readonly] {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+            transform: translateY(-1px);
+        }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .form-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.9/jquery.validate.unobtrusive.min.js"></script>
+}
