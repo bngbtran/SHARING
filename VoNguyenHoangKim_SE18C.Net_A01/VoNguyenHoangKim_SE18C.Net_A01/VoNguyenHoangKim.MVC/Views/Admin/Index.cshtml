@@ -21,7 +21,7 @@
                     <input type="text" name="search" class="form-control"
                            placeholder="Search accounts"
                            value="@ViewData["CurrentSearch"]" />
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-search">
                         <i class="pi pi-search"></i>
                     </button>
                 </div>
@@ -99,14 +99,12 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        transition: all 0.3s ease;
         text-decoration: none;
     }
 
     /* Card */
     .manage-accounts-card {
         padding: 2px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     /* Table */
@@ -154,13 +152,13 @@
         background: transparent;
         color: var(--color-primary);
         font-size: 1rem;
-        transition: all 0.2s ease;
         cursor: pointer;
     }
 
     .btn-edit {
         border-color: #4897d8;
         color: #4897d8;
+        text-decoration: none
     }
 
         .btn-edit:hover {
@@ -188,4 +186,18 @@
     .search-bar button {
         border-radius: 0 8px 8px 0;
     }
+
+    .btn-search {
+        background: #3F6C45;
+        color: #FFFFFF;
+    }
+
+    .btn-search:hover {
+        background: #3F6C45; 
+        color: #FFFFFF; 
+        transform: none; 
+        box-shadow: none; 
+        cursor: pointer;
+    }
+
 </style>
