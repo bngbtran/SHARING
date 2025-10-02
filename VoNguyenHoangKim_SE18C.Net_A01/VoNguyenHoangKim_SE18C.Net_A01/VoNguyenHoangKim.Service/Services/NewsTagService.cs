@@ -5,7 +5,6 @@ using VoNguyenHoangKim.Data.Repositories;
 using VoNguyenHoangKim.Service.DTOs;
 using VoNguyenHoangKim.Service.ValidateReceive;
 using VoNguyenHoangKim.Service.ValidateSend;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace VoNguyenHoangKim.Service.Services
 {

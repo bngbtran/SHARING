@@ -1,12 +1,4 @@
-﻿using VoNguyenHoangKim.Common;
-using VoNguyenHoangKim.Service.DTOs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoNguyenHoangKim.Common.Validate;
-using VoNguyenHoangKim.Data;
+﻿using VoNguyenHoangKim.Service.DTOs;
 
 namespace VoNguyenHoangKim.Service.ValidateReceive
 {

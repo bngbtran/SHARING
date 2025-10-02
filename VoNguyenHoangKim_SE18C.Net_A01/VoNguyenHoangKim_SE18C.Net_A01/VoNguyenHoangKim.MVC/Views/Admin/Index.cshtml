@@ -5,7 +5,6 @@
     ViewData["Title"] = "Manage Accounts";
 }
 
-<!-- PAGE HEADER -->
 <div class="page-header">
     <h2>Account List</h2>
     <a asp-action="Create" class="btn-create">
@@ -65,6 +64,13 @@
             }
         </tbody>
     </table>
+
+    @if (!Model.Any())
+    {
+        <div class="alert alert-warning mt-4" role="alert">
+            Not Found !!!
+        </div>
+    }
 </div>
 
 <style>
@@ -102,12 +108,10 @@
         text-decoration: none;
     }
 
-    /* Card */
     .manage-accounts-card {
         padding: 2px;
     }
 
-    /* Table */
     .table-modern {
         width: 100%;
         border-collapse: separate;
@@ -196,4 +200,12 @@
         cursor: pointer;
     }
 
+    .alert-warning {
+        border-radius: 8px;
+        padding: 15px;
+        font-size: 0.95rem;
+        background-color: rgba(63,108,69,0.08);
+        color: #3F6C45;
+        border: none;
+    }
 </style>

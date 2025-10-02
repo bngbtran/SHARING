@@ -1,8 +1,4 @@
-﻿using VoNguyenHoangKim.Common;
-using VoNguyenHoangKim.Common.Validate;
-using VoNguyenHoangKim.Data;
-
-namespace VoNguyenHoangKim.Service.ValidateReceive
+﻿namespace VoNguyenHoangKim.Service.ValidateReceive
 {
     public class ServiceResponse<T>
     {

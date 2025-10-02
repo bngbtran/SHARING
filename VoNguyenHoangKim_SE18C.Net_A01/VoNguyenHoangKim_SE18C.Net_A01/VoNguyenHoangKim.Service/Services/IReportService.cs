@@ -1,6 +1,4 @@
 ﻿using VoNguyenHoangKim.Service.DTOs;
-using VoNguyenHoangKim.Service.ValidateReceive;
-using VoNguyenHoangKim.Service.ValidateSend;
 
 namespace VoNguyenHoangKim.Service.Services
 {

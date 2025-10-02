@@ -24,7 +24,7 @@
             {
                 if (string.IsNullOrEmpty(lastId))
                 {
-                    return $"{prefix}00000001";
+                    return $"{prefix}01";
                 }
 
                 var number = int.Parse(lastId.Replace(prefix, "")) + 1;

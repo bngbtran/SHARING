@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VoNguyenHoangKim.Common.Enums;
-using VoNguyenHoangKim.Data;
 using VoNguyenHoangKim.Data.Context;
 using VoNguyenHoangKim.Service.DTOs;
 

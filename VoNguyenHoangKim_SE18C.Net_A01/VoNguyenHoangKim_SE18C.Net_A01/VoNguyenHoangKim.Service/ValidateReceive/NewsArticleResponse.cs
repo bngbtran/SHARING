@@ -1,7 +1,4 @@
-﻿using VoNguyenHoangKim.Common;
-using VoNguyenHoangKim.Common.Validate;
-using VoNguyenHoangKim.Data;
-using VoNguyenHoangKim.Service.DTOs;
+﻿using VoNguyenHoangKim.Service.DTOs;
 
 namespace VoNguyenHoangKim.Service.ValidateReceive
 {

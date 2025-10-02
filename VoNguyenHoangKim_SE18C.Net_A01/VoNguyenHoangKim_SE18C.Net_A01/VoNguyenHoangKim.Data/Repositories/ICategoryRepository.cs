@@ -1,5 +1,4 @@
-﻿using VoNguyenHoangKim.Common.Constants;
-using VoNguyenHoangKim.Data.Models;
+﻿using VoNguyenHoangKim.Data.Models;
 
 namespace VoNguyenHoangKim.Data.Repositories
 {

@@ -6,7 +6,6 @@ using VoNguyenHoangKim.Common.Enums;
 using VoNguyenHoangKim.Service.Services;
 using VoNguyenHoangKim.Service.ValidateReceive;
 using VoNguyenHoangKim.Service.ValidateSend;
-using VoNguyenHoangKim.Data;
 
 namespace VoNguyenHoangKim.MVC.Controllers
 {

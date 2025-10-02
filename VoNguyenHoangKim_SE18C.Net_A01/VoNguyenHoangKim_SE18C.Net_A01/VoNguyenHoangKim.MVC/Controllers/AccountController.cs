@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using VoNguyenHoangKim.Common.Enums;
@@ -43,12 +42,12 @@ namespace VoNguyenHoangKim.MVC.Controllers
             }
 
             var claims = new List<Claim>
-    {
-        new Claim(ClaimTypes.NameIdentifier, response.Account.Id),
-        new Claim(ClaimTypes.Email, response.Account.Email),
-        new Claim(ClaimTypes.Role, ((Role)response.Account.Role).ToString()),
-        new Claim(ClaimTypes.Name, response.Account.FullName)
-    };
+            {
+                new Claim(ClaimTypes.NameIdentifier, response.Account.Id),
+                new Claim(ClaimTypes.Email, response.Account.Email),
+                new Claim(ClaimTypes.Role, ((Role)response.Account.Role).ToString()),
+                new Claim(ClaimTypes.Name, response.Account.FullName)
+            };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var authProperties = new AuthenticationProperties
