@@ -6,36 +6,33 @@
 }
 
 <div class="manage-accounts-card create-card">
-    <h2 class="card-title text-center mb-4">Profile Settings</h2>
+    <h2 class="card-title text-center mb-4">Edit Profile</h2>
     <form asp-action="Profile" method="post">
         <input type="hidden" asp-for="Id" />
 
         <div class="mb-3">
-            <label asp-for="Email" class="form-label">Email Address</label>
+            <label asp-for="Email" class="form-label">Email Address:</label>
             <input asp-for="Email" class="form-control" readonly />
-            <small class="form-text"><i class="fas fa-lock me-1"></i>Email cannot be changed</small>
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="FullName" class="form-label">Full Name</label>
+            <label asp-for="FullName" class="form-label">Full Name:</label>
             <input asp-for="FullName" class="form-control" placeholder="Enter your full name" />
             <span asp-validation-for="FullName" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Password" class="form-label">Password</label>
+            <label asp-for="Password" class="form-label">Password:</label>
             <input asp-for="Password" type="password" class="form-control"
                    placeholder="Leave blank to keep current password" />
-            <small class="form-text"><i class="fas fa-info-circle me-1"></i>Only enter a password if you want to change it</small>
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Role" class="form-label">Role</label>
+            <label asp-for="Role" class="form-label">Role:</label>
             <input type="text" class="form-control" value="@((Role)Model.Role)" readonly />
             <input type="hidden" asp-for="Role" />
-            <small class="form-text"><i class="fas fa-lock me-1"></i>Role cannot be changed</small>
             <span asp-validation-for="Role" class="text-danger"></span>
         </div>
 
@@ -109,7 +106,6 @@
         border-radius: 8px;
         padding: 8px 16px;
         font-weight: 500;
-        transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
         gap: 5px;
@@ -119,7 +115,6 @@
         .btn-cancel:hover {
             background-color: rgba(63,108,69,0.08);
             color: #3F6C45;
-            transform: translateY(-1px);
         }
 
     .text-danger {

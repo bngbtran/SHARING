@@ -11,25 +11,25 @@
         <input type="hidden" asp-for="UpdatedById" value="@ViewBag.AccountId" />
 
         <div class="mb-3">
-            <label asp-for="Title" class="form-label">Title <span class="text-danger">*</span></label>
+            <label asp-for="Title" class="form-label">Title: <span class="text-danger">*</span></label>
             <input type="text" asp-for="Title" class="form-control" placeholder="Enter article title" />
             <span asp-validation-for="Title" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Headline" class="form-label">Headline</label>
+            <label asp-for="Headline" class="form-label">Headline:</label>
             <input type="text" asp-for="Headline" class="form-control" placeholder="Enter headline (optional)" />
             <span asp-validation-for="Headline" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="Content" class="form-label">Content <span class="text-danger">*</span></label>
+            <label asp-for="Content" class="form-label">Content: <span class="text-danger">*</span></label>
             <textarea asp-for="Content" class="form-control" rows="8" placeholder="Write your article content here..."></textarea>
             <span asp-validation-for="Content" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
-            <label asp-for="NewsSource" class="form-label">News Source</label>
+            <label asp-for="NewsSource" class="form-label">News Source:</label>
             <input type="text" asp-for="NewsSource" class="form-control" placeholder="Enter news source (optional)" />
             <span asp-validation-for="NewsSource" class="text-danger"></span>
         </div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label asp-for="CategoryId" class="form-label">Category <span class="text-danger">*</span></label>
+                    <label asp-for="CategoryId" class="form-label">Category: <span class="text-danger">*</span></label>
                     <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.Categories">
                         <option value="">Select Category</option>
                     </select>
@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label asp-for="Status" class="form-label">Status <span class="text-danger">*</span></label>
+                    <label asp-for="Status" class="form-label">Status: <span class="text-danger">*</span></label>
                     <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<VoNguyenHoangKim.Common.Enums.Status>()">
                         <option value="">Select Status</option>
                     </select>
@@ -65,7 +65,7 @@
 
         <div class="row">
             <div class="mb-3">
-                <label asp-for="TagIds" class="form-label">Tags</label>
+                <label asp-for="TagIds" class="form-label">Tags:</label>
                 <select asp-for="TagIds" class="form-select" multiple asp-items="ViewBag.Tags" style="min-height: 120px;">
                 </select>
                 <small class="form-text">Hold Ctrl to select multiple tags</small>
@@ -95,9 +95,8 @@
         border-radius: 12px;
         background: var(--color-secondary);
         padding: 25px;
-        max-width: 900px;
-        margin: 20px auto;
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+        max-width: 600px;
+        margin: 0 auto;
     }
 
     .card-title {
@@ -123,6 +122,11 @@
             border-color: var(--color-primary);
             outline: none;
             box-shadow: 0 0 6px rgba(63,108,69,0.2);
+            cursor: pointer;
+        }
+
+        .form-select: hover {
+            cursor: pointer;
         }
 
         .form-control[readonly] {
@@ -137,6 +141,12 @@
         margin-top: 20px;
     }
 
+    .form-select,
+    .form-select:focus,
+    .form-select:hover {
+        cursor: pointer;
+    }
+
     .text-danger {
         font-size: 0.85rem;
         margin-top: 5px;
@@ -149,7 +159,6 @@
         border-radius: 8px;
         padding: 8px 16px;
         font-weight: 500;
-        transition: all 0.3s ease;
         display: inline-flex;
         align-items: center;
         gap: 5px;
@@ -158,7 +167,6 @@
 
         .btn-cancel:hover {
             background-color: rgba(63,108,69,0.08);
-            transform: translateY(-1px);
         }
 
     .form-text {

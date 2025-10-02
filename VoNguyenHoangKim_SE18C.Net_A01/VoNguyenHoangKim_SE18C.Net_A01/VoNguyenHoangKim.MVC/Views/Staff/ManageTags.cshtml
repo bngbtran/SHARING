@@ -21,7 +21,7 @@
                     <input type="text" name="search" class="form-control"
                            placeholder="Search tags"
                            value="@ViewData["CurrentSearch"]" />
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-search">
                         <i class="pi pi-search"></i>
                     </button>
                 </div>
@@ -104,14 +104,12 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        transition: all 0.3s ease;
         text-decoration: none;
     }
 
     /* Card */
     .manage-categories-card {
         padding: 2px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     /* Table */
@@ -140,7 +138,6 @@
 
         .table-modern th {
             font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
@@ -158,20 +155,19 @@
         border: 1px solid var(--color-primary);
         background: transparent;
         color: var(--color-primary);
-        font-size: 1rem;
-        transition: all 0.2s ease;
+        font-size: 1rem;        
         cursor: pointer;
     }
 
     .btn-edit {
         border-color: #4897d8;
         color: #4897d8;
+        text-decoration: none;
     }
 
         .btn-edit:hover {
             background: #4897d8;
             color: #fff;
-            transform: scale(1.1);
         }
 
     .btn-delete {
@@ -182,7 +178,6 @@
         .btn-delete:hover {
             background: #dc3545;
             color: #fff;
-            transform: scale(1.1);
         }
 
     .search-bar input.form-control {
@@ -199,4 +194,16 @@
         border-radius: 8px;
         background: #f8f9fa;
     }
+
+    .btn-search {
+        background: #3F6C45;
+        color: #FFFFFF;
+    }
+
+        .btn-search:hover {
+            background: #3F6C45;
+            color: #FFFFFF;
+            box-shadow: none;
+            cursor: pointer;
+        }
 </style>

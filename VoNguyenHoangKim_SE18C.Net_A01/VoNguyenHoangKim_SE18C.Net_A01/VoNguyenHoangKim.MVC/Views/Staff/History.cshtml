@@ -7,7 +7,7 @@
 
 <!-- PAGE HEADER -->
 <div class="page-header">
-    <h2>Article History</h2>
+    <h2>History List</h2>
     <a asp-action="CreateNews" class="btn-create">
         <i class="pi pi-plus"></i> Create
     </a>
@@ -23,7 +23,7 @@
                         <input type="text" name="search" class="form-control"
                                placeholder="Search articles"
                                value="@ViewData["CurrentSearch"]" />
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-search">
                             <i class="pi pi-search"></i>
                         </button>
                     </div>
@@ -122,19 +122,16 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        transition: all 0.3s ease;
         text-decoration: none;
     }
 
         .btn-create:hover {
             background: #2e5234;
-            transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
     .manage-categories-card {
         padding: 2px;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .table-modern {
@@ -162,7 +159,6 @@
 
         .table-modern th {
             font-weight: 600;
-            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
@@ -188,12 +184,12 @@
     .btn-info {
         border-color: #17a2b8;
         color: #17a2b8;
+        text-decoration: none;
     }
 
         .btn-info:hover {
             background: #17a2b8;
             color: #fff;
-            transform: scale(1.1);
         }
 
     .search-bar input.form-control {
@@ -237,4 +233,16 @@
             font-size: 0.85rem;
         }
     }
+
+    .btn-search {
+        background: #3F6C45;
+        color: #FFFFFF;
+    }
+
+        .btn-search:hover {
+            background: #3F6C45;
+            color: #FFFFFF;
+            box-shadow: none;
+            cursor: pointer;
+        }
 </style>
