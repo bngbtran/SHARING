@@ -1,0 +1,127 @@
+﻿@page "{id}"
+@model VoNguyenHoangKim.RazorPages.Pages.Staff.EditCategoryModel
+@using VoNguyenHoangKim.Common.Enums
+
+@{
+    ViewData["Title"] = "Edit Category";
+}
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-outline-primary {
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+
+    .btn-outline-secondary {
+        border: 1px solid #6c757d;
+        color: #6c757d;
+        background: transparent;
+        border-radius: 8px;
+        padding: 8px 20px;
+        font-weight: 500;
+    }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+        }
+</style>
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Edit Category</h2>
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="CategoryRequest.Name" class="form-label">Name: <span class="text-danger">*</span></label>
+            <input asp-for="CategoryRequest.Name" class="form-control" placeholder="Input Category Name" />
+            <span asp-validation-for="CategoryRequest.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CategoryRequest.Description" class="form-label">Description: <span class="text-danger">*</span></label>
+            <input asp-for="CategoryRequest.Description" class="form-control" placeholder="Input Description" />
+            <span asp-validation-for="CategoryRequest.Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="CategoryRequest.Status" class="form-label">Status: <span class="text-danger">*</span></label>
+            <select asp-for="CategoryRequest.Status" class="form-control" asp-items="Html.GetEnumSelectList<Status>()" style="cursor: pointer;"></select>
+            <span asp-validation-for="CategoryRequest.Status" class="text-danger"></span>
+        </div>
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-page="/Staff/Index" class="btn btn-cancel"><i class="pi pi-times"></i> Cancel</a>
+            <button type="submit" class="btn btn-secondary" style="background-color: #3F6C45; color: #FFFFFF"><i class="pi pi-save"></i> Save</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.9/jquery.validate.unobtrusive.min.js"></script>
+}

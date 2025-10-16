@@ -1,0 +1,184 @@
+﻿@page "{id}"
+@model VoNguyenHoangKim.RazorPages.Pages.News.DetailsModel
+@using VoNguyenHoangKim.Common.Enums
+@using VoNguyenHoangKim.Service.ValidateReceive
+
+@{
+    ViewData["Title"] = "News Details";
+}
+
+<style>
+    .details-card {
+        border-radius: 16px;
+        background: #ffffff;
+        padding: 30px;
+        margin: 25px auto;
+        max-width: 1000px;
+    }
+
+    .card-header {
+        background: #3F6C45;
+        border-radius: 12px 12px 0 0;
+        padding: 18px 24px;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: #ffffff;
+        font-size: 1.6rem;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .bad-color {
+        background-color: #3F6C45;
+    }
+
+    .content-section .content-text {
+        border-radius: 10px;
+        background: rgba(63, 108, 69, 0.04);
+        padding: 18px;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #333;
+    }
+
+    .tags-section .badge {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        border-radius: 12px;
+    }
+
+    .fw-label {
+        font-weight: 600;
+        color: #3F6C45;
+    }
+
+    .info-table th {
+        background: rgba(63,108,69,0.08);
+        color: #3F6C45;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .info-table td {
+        color: #333;
+    }
+
+    .info-table {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+        }
+</style>
+
+<div class="details-card fade-in">
+    <div class="card-body">
+        <article>
+            <header class="mb-5">
+                <h1 class="fw-bold mb-3" style="color: #3F6C45">@Model.NewsArticle.NewsArticle.Title</h1>
+                @if (!string.IsNullOrEmpty(Model.NewsArticle.NewsArticle.Headline))
+                {
+                    <h5 class="text-muted mb-4 fst-italic">@Model.NewsArticle.NewsArticle.Headline</h5>
+                }
+
+                <h5 class="fw-bold mb-3" style="color: rgba(33, 37, 41, 0.75)">
+                    <i class="pi pi-info-circle me-2"></i>General Information
+                </h5>
+                <table class="table table-bordered info-table">
+                    <tbody>
+                        <tr>
+                            <th style="width: 200px;"><i class="pi pi-calendar me-2 text-muted"></i>Created Date:</th>
+                            <td>@Model.NewsArticle.NewsArticle.CreatedDate.ToString("dd/MM/yyyy")</td>
+                            <th style="width: 200px;"><i class="pi pi-history me-2 text-muted"></i>Modified Date:</th>
+                            <td>@(Model.NewsArticle.NewsArticle.ModifiedDate?.ToString("dd/MM/yyyy") ?? "N/A")</td>
+                        </tr>
+                        <tr>
+                            <th><i class="fas fa-user me-2 text-muted"></i>Updated By:</th>
+                            <td>@(Model.NewsArticle.NewsArticle.UpdatedByFullName ?? "N/A")</td>
+                            <th><i class="pi pi-list me-2 text-muted"></i>Category:</th>
+                            <td><span>@Model.NewsArticle.NewsArticle.CategoryName</span></td>
+                        </tr>
+                        <tr>
+                            <th><i class="pi pi-verified me-2 text-muted"></i>Status:</th>
+                            <td>
+                                @{
+                                    var statusColor = Model.NewsArticle.NewsArticle.Status switch
+                                    {
+                                        Status.Active => "#3F6C45",
+                                        Status.Inactive => "#dc3545",
+                                        _ => "#6c757d"
+                                    };
+                                }
+                                <span style="font-weight:600; color:@statusColor">@Model.NewsArticle.NewsArticle.Status</span>
+                            </td>
+                            <th><i class="pi pi-link me-2 text-muted"></i>News Source:</th>
+                            <td>@(Model.NewsArticle.NewsArticle.NewsSource ?? "N/A")</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </header>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="content-section">
+                        <h5 class="fw-bold mb-3" style="color: rgba(33, 37, 41, 0.75)">
+                            <i class="pi pi-book me-2"></i>   Content
+                        </h5>
+                        <div class="content-text">
+                            @Html.Raw(Html.Encode(Model.NewsArticle.NewsArticle.Content).Replace("\n", "<br />"))
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="tags-section">
+                    <h5 class="fw-bold mb-3" style="color: rgba(33, 37, 41, 0.75)"><i class="pi pi-tag me-2"></i>Tags</h5>
+                    @if (Model.NewsArticle.NewsArticle.TagNames != null && Model.NewsArticle.NewsArticle.TagNames.Any())
+                    {
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var tag in Model.NewsArticle.NewsArticle.TagNames)
+                            {
+                                <span class="badge">@tag</span>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted fst-italic">Not Found !!!</p>
+                    }
+                </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-top text-end">
+                <a asp-page="/News/Index" class="btn-cancel">
+                    <i class="pi pi-times"></i> Cancel
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+}

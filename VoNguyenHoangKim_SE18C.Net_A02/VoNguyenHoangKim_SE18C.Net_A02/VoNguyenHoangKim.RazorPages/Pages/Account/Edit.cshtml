@@ -1,0 +1,128 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Account.EditModel
+
+@{
+    ViewData["Title"] = "Sửa tài khoản";
+}
+
+<div class="edit-account-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-primary text-center mb-4">
+                        tài khoản</h3>
+                    @if (TempData["Error"] != null)
+                    {
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            @TempData["Error"]
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    }
+                    <form method="post">
+                        <input type="hidden" asp-for="Input.Email" />
+                        <div class="mb-3">
+                            <label asp-for="Input.Email" class="form-label fw-bold">Email</label>
+                            <input asp-for="Input.Email" class="form-control" disabled />
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Password" class="form-label fw-bold">Mật khẩu</label>
+                            <input asp-for="Input.Password" class="form-control" type="password" placeholder="Nhập mật khẩu mới (nếu muốn thay đổi)" />
+                            <span asp-validation-for="Input.Password" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.FullName" class="form-label fw-bold">Họ tên</label>
+                            <input asp-for="Input.FullName" class="form-control" placeholder="Nhập họ tên" />
+                            <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Input.Role" class="form-label fw-bold">Vai trò</label>
+                            <select asp-for="Input.Role" class="form-select">
+                                <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Admin)">Admin</option>
+                                <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Staff)">Staff</option>
+                                <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Lecturer)">Lecturer</option>
+                            </select>
+                            <span asp-validation-for="Input.Role" class="text-danger"></span>
+                        </div>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary btn-icon flex-grow-1"><i class="fas fa-save"></i> Lưu</button>
+                            <a asp-page="./Index" class="btn btn-secondary btn-icon flex-grow-1"><i class="fas fa-times"></i> Hủy</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .edit-account-container {
+        padding: 2rem 0;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+    .card-title {
+        color: #1a237e;
+    }
+
+    .form-control, .form-select {
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+        transition: border-color 0.3s ease;
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #3f51b5;
+            box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+        }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #3f51b5, #1a237e);
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #1a237e, #3f51b5);
+            transform: scale(1.05);
+        }
+
+    .btn-secondary {
+        transition: all 0.3s ease;
+    }
+
+        .btn-secondary:hover {
+            transform: scale(1.05);
+        }
+
+    .btn-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    @@media (max-width: 576px) {
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+}

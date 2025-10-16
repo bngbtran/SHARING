@@ -1,0 +1,86 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Account.CreateModel
+
+@{
+    ViewData["Title"] = "Tạo tài khoản mới";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+        <div class="card create-card shadow-lg mt-4">
+            <div class="card-body p-4">
+                <div class="text-center mb-4">
+                    <h3 class="card-title text-primary">Tạo tài khoản mới</h3>
+                </div>
+                <form method="post">
+                    <div class="mb-3">
+                        <label asp-for="Input.Email" class="form-label fw-bold">Email</label>
+                        <input asp-for="Input.Email" class="form-control" placeholder="Nhập email" />
+                        <span asp-validation-for="Input.Email" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Input.Password" class="form-label fw-bold">Mật khẩu</label>
+                        <input asp-for="Input.Password" class="form-control" type="password" placeholder="Nhập mật khẩu" />
+                        <span asp-validation-for="Input.Password" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Input.FullName" class="form-label fw-bold">Họ tên</label>
+                        <input asp-for="Input.FullName" class="form-control" placeholder="Nhập họ tên" />
+                        <span asp-validation-for="Input.FullName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Input.Role" class="form-label fw-bold">Vai trò</label>
+                        <select asp-for="Input.Role" class="form-control">
+                            <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Admin)">Admin</option>
+                            <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Staff)">Staff</option>
+                            <option value="@((int)VoNguyenHoangKim.Common.Enums.Role.Lecturer)">Lecturer</option>
+                        </select>
+                        <span asp-validation-for="Input.Role" class="text-danger"></span>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button type="submit" class="btn btn-primary flex-grow-1">Tạo</button>
+                        <a asp-page="./Index" class="btn btn-secondary flex-grow-1">Hủy</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .create-card {
+        border: none;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .card-title {
+        color: #1a237e;
+    }
+
+    .form-control {
+        border-radius: 6px;
+        border: 1px solid #e0e0e0;
+    }
+
+        .form-control:focus {
+            border-color: #3f51b5;
+            box-shadow: 0 0 5px rgba(63, 81, 181, 0.3);
+        }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #3f51b5, #1a237e);
+        border: none;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #1a237e, #3f51b5);
+        }
+
+    .btn-secondary:hover {
+    }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

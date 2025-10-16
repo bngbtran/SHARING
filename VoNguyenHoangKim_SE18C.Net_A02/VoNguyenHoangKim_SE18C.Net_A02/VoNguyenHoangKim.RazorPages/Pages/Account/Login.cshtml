@@ -1,0 +1,61 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Account.LoginModel
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mb-4 fw-bold" style="color: #3F6C45;">LOGIN</h1>
+    <p class="mb-4 text-muted" style="color: #050505;">Welcome back! Please login to your account.</p>
+
+    <form method="post" class="w-100" style="max-width: 400px;" novalidate>
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger text-center fw-semibold" role="alert">
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <div>@error.ErrorMessage</div>
+                }
+            </div>
+        }
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Email"
+                   class="form-control border-0 border-bottom"
+                   id="floatingEmail"
+                   placeholder="Email"
+                   style="border-color: #3F6C45;">
+            <label for="floatingEmail" style="color: #3F6C45;">Email</label>
+            <span asp-validation-for="Input.Email" class="text-danger small"></span>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input asp-for="Input.Password"
+                   type="password"
+                   class="form-control border-0 border-bottom"
+                   id="floatingPassword"
+                   placeholder="Password"
+                   style="border-color: #3F6C45;">
+            <label for="floatingPassword" style="color: #3F6C45;">Password</label>
+            <span asp-validation-for="Input.Password" class="text-danger small"></span>
+        </div>
+
+        <button type="submit"
+                class="btn w-100 py-2 fw-bold"
+                style="background: #3F6C45; color: #FFFFFF;">
+            LOGIN
+        </button>
+
+        <div class="d-flex flex-column justify-content-center align-items-center mt-4">
+            <p class="text-muted" style="color: #050505;">Or continue without login:</p>
+            <a asp-page="/News/PublicNews"
+               style="color: #6c757d; text-decoration: underline; font-weight: 500;">
+                Continue as Guest
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

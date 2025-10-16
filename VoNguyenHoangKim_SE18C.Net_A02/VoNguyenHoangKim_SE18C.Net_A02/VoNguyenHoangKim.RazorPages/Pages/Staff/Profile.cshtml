@@ -1,0 +1,133 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Staff.ProfileModel
+@using VoNguyenHoangKim.Common.Enums
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Edit Profile</h2>
+    <div class="card-body">
+        <form method="post">
+            <input type="hidden" asp-for="AccountEditRequest.Id" />
+            <div class="mb-3">
+                <label asp-for="AccountEditRequest.Email" class="form-label">Email Address:</label>
+                <input asp-for="AccountEditRequest.Email" class="form-control" readonly />
+                <span asp-validation-for="AccountEditRequest.Email" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AccountEditRequest.FullName" class="form-label">Full Name:</label>
+                <input asp-for="AccountEditRequest.FullName" class="form-control" placeholder="Enter your full name" />
+                <span asp-validation-for="AccountEditRequest.FullName" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AccountEditRequest.Password" class="form-label">Password:</label>
+                <input asp-for="AccountEditRequest.Password" type="password" class="form-control"
+                       placeholder="Leave blank to keep current password" />
+                <span asp-validation-for="AccountEditRequest.Password" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="AccountEditRequest.Role" class="form-label">Role:</label>
+                <input type="text" class="form-control" value="@((Role)Model.AccountEditRequest.Role)" readonly />
+                <input type="hidden" asp-for="AccountEditRequest.Role" />
+                <span asp-validation-for="AccountEditRequest.Role" class="text-danger"></span>
+            </div>
+            
+            <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+                <a asp-page="/Staff/Index" class="btn btn-cancel"><i class="pi pi-times"></i> Cancel</a>
+                <button type="submit" class="btn btn-secondary" style="background-color: #3F6C45; color: #FFFFFF"><i class="pi pi-save"></i> Save</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+        --color-text-light: #FFFFFF;
+        --color-text-dark: #333333;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+    }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: none;
+        }
+
+        .form-control[readonly] {
+            background-color: #f8f9fa;
+            cursor: not-allowed;
+        }
+
+    .form-actions {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: #3F6C45;
+        border: 1px solid #3F6C45;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: #3F6C45;
+        }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .form-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+    }
+</style>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/mvc/5.2.9/jquery.validate.unobtrusive.min.js"></script>
+}

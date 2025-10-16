@@ -1,0 +1,75 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Account.AccessDeniedModel
+
+@{
+    ViewData["Title"] = "Truy cập bị từ chối";
+}
+
+<div class="access-denied-container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <div class="card shadow-lg text-center">
+                <div class="card-body p-4">
+                    <h3 class="card-title text-danger mb-4">Truy cập bị từ chối</h3>
+                    <p class="text-muted mb-4">Bạn không có quyền truy cập trang này.</p>
+                    <a asp-page="/Home/Index" class="btn btn-primary btn-icon"><i class="fas fa-home"></i> Quay lại trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .access-denied-container {
+        padding: 5rem 0;
+        min-height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+    .card-title {
+        color: #dc3545;
+    }
+
+    .btn-primary {
+        background: linear-gradient(45deg, #3f51b5, #1a237e);
+        border: none;
+        transition: all 0.3s ease;
+    }
+
+        .btn-primary:hover {
+            background: linear-gradient(45deg, #1a237e, #3f51b5);
+            transform: scale(1.05);
+        }
+
+    .btn-icon {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    @@media (max-width: 576px) {
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+}

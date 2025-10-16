@@ -1,0 +1,145 @@
+﻿@page
+@model VoNguyenHoangKim.RazorPages.Pages.Admin.CreateModel
+@using VoNguyenHoangKim.Common.Enums
+
+@{
+    ViewData["Title"] = "Create Account";
+}
+
+<div class="manage-accounts-card create-card">
+    <h2 class="card-title text-center mb-4">Create Account</h2>
+    <form method="post">
+        <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Input.Email" class="form-label">Email:</label>
+            <input asp-for="Input.Email" class="form-control" placeholder="Input Email" />
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.FullName" class="form-label">Full Name:</label>
+            <input asp-for="Input.FullName" class="form-control" placeholder="Input Full Name" />
+            <span asp-validation-for="Input.FullName" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.Password" class="form-label">Password:</label>
+            <input asp-for="Input.Password" type="password" class="form-control" placeholder="Input Password" />
+            <span asp-validation-for="Input.Password" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Input.Role" class="form-label">Role:</label>
+            <select asp-for="Input.Role" class="form-control" asp-items="Html.GetEnumSelectList<Role>()"></select>
+            <span asp-validation-for="Input.Role" class="text-danger"></span>
+        </div>
+
+        <div class="form-actions d-flex justify-content-end mt-4 gap-2">
+            <a asp-page="./Index" class="btn btn-cancel">
+                <i class="pi pi-times"></i> Cancel
+            </a>
+            <button type="submit" class="btn btn-secondary">
+                <i class="pi pi-save"></i> Save
+            </button>
+        </div>
+    </form>
+</div>
+
+<style>
+    :root {
+        --color-primary: #3F6C45;
+        --color-secondary: #FFFFFF;
+    }
+
+    .create-card {
+        border-radius: 12px;
+        background: var(--color-secondary);
+        padding: 25px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        font-weight: 700;
+        color: var(--color-primary);
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .form-label {
+        font-weight: 500;
+        color: var(--color-primary);
+        margin-bottom: 6px;
+        display: block;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        font-size: 1rem; 
+        border-radius: 8px;
+        border: 1px solid #3F6C45;
+        line-height: 1.5;
+        box-sizing: border-box;
+    }
+
+        .form-control:focus {
+            border-color: var(--color-primary);
+            outline: none;
+            box-shadow: none;
+        }
+
+    select.form-control {
+        cursor: pointer;
+    }
+
+    .text-danger {
+        font-size: 0.85rem;
+        margin-top: 5px;
+    }
+
+    .form-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .btn-cancel {
+        background-color: #FFFFFF;
+        color: var(--color-primary);
+        border: 1px solid var(--color-primary);
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        text-decoration: none;
+    }
+
+        .btn-cancel:hover {
+            background-color: rgba(63,108,69,0.08);
+            color: var(--color-primary);
+        }
+
+    .btn-secondary {
+        background-color: var(--color-primary);
+        color: #FFFFFF;
+        border-radius: 8px;
+        padding: 8px 16px;
+        font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+        .btn-secondary:hover {
+            background-color: #356038;
+        }
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
