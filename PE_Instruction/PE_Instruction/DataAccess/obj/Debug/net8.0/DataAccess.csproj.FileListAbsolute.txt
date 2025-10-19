@@ -1,0 +1,17 @@
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\DataAccess.deps.json
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\DataAccess.runtimeconfig.json
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\DataAccess.dll
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\DataAccess.pdb
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\Business.dll
+D:\PE_Instruction\PE_Instruction\DataAccess\bin\Debug\net8.0\Business.pdb
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.csproj.AssemblyReference.cache
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfoInputs.cache
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.AssemblyInfo.cs
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.csproj.CoreCompileInputs.cache
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.csproj.Up2Date
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.dll
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\refint\DataAccess.dll
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.pdb
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\DataAccess.genruntimeconfig.cache
+D:\PE_Instruction\PE_Instruction\DataAccess\obj\Debug\net8.0\ref\DataAccess.dll

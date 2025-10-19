@@ -1,0 +1,112 @@
+﻿@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+@{
+    var user = HttpContextAccessor.HttpContext?.User;
+    var isLoggedIn = user?.Identity?.IsAuthenticated ?? false;
+    var username = user?.Identity?.Name ?? "Guest";
+    var role = user?.FindFirst("Role")?.Value;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Car Management</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        footer {
+            font-size: 0.9rem;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .nav-link.active {
+            font-weight: bold;
+            color: #ffc107 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" asp-page="/Index">Car Management</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @if (isLoggedIn)
+                    {
+                        @if (role == "Admin")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Title"]?.ToString() == "Brands" ? "active" : "")" asp-page="/Brands/Index">Brands</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Title"]?.ToString() == "Cars" ? "active" : "")" asp-page="/Cars/Index">Cars</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-page="/Users/Index">Users</a>
+                            </li>
+                        }
+                        @if (role == "Staff")
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link @(ViewData["Title"]?.ToString() == "Cars" ? "active" : "")" asp-page="/Cars/Index">Cars</a>
+                            </li>
+                        }
+                    }
+                </ul>
+
+                <ul class="navbar-nav ms-auto">
+                    @if (isLoggedIn)
+                    {
+                        <li class="nav-item">
+                            <span class="navbar-text me-3 text-light">
+                                Hello, <strong>@username</strong>
+                            </span>
+                        </li>
+                        <li class="nav-item">
+                            <form method="post" asp-page="/Logout" class="d-inline">
+                                <button type="submit" class="btn btn-outline-warning btn-sm">Logout</button>
+                            </form>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item">
+                            <a class="btn btn-outline-light btn-sm" asp-page="/Login">Login</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

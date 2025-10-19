@@ -1,0 +1,14 @@
+﻿@page
+@model RazorWeb.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="text-center mt-5">
+    <h1>Welcome to Car Management System</h1>
+    <p class="lead">Manage cars, brands, and users easily!</p>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <a asp-page="/Login" class="btn btn-primary btn-lg mt-3">Login</a>
+    }
+</div>

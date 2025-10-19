@@ -1,0 +1,14 @@
+D:\PE_Instruction\PE_Instruction\Business\bin\Debug\net8.0\Business.deps.json
+D:\PE_Instruction\PE_Instruction\Business\bin\Debug\net8.0\Business.runtimeconfig.json
+D:\PE_Instruction\PE_Instruction\Business\bin\Debug\net8.0\Business.dll
+D:\PE_Instruction\PE_Instruction\Business\bin\Debug\net8.0\Business.pdb
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.csproj.AssemblyReference.cache
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.AssemblyInfoInputs.cache
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.AssemblyInfo.cs
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.csproj.CoreCompileInputs.cache
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.dll
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\refint\Business.dll
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.pdb
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\Business.genruntimeconfig.cache
+D:\PE_Instruction\PE_Instruction\Business\obj\Debug\net8.0\ref\Business.dll

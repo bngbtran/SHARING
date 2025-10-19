@@ -1,0 +1,20 @@
+﻿@page "{id:int}"
+@model RazorWeb.Pages.Brands.DetailsModel
+@{
+    ViewData["Title"] = "Brand Details";
+}
+
+<h2>Brand Details</h2>
+
+<div class="card mt-3 p-3">
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.Brand.Id</dd>
+
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Brand.Name</dd>
+    </dl>
+</div>
+
+<a asp-page="Edit" asp-route-id="@Model.Brand.Id" class="btn btn-warning">Edit</a>
+<a asp-page="Index" class="btn btn-secondary">Back to List</a>

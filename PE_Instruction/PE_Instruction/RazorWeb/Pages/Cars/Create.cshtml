@@ -1,0 +1,30 @@
+﻿@page
+@model RazorWeb.Pages.Cars.CreateModel
+@{
+    ViewData["Title"] = "Add Car";
+}
+
+<h2>Add New Car</h2>
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Car.Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Brand</label>
+        @if (Model.IsStaff)
+        {
+            <input type="hidden" asp-for="Car.BrandId" />
+            <input class="form-control" value="@Model.BrandList.First().Text" disabled />
+        }
+        else
+        {
+            <select asp-for="Car.BrandId" asp-items="Model.BrandList" class="form-select"></select>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Back</a>
+</form>

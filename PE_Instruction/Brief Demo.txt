@@ -1,0 +1,25 @@
+Role:
+- Admin
+- Staff
+
+Class:
+- Car: ID, Name
+- Brand: ID, Name
+- Staff: ID, gmail, password, brand
+
+Function:
+- Admin:
+	+ MUST BE LOGGED IN.
+	+ Create Brand/Car.
+	+ Update Brand/Car.
+	+ Delete Brand/Car.
+	+ View Brand/Car List.
+	+ View Brand/Car Detail.
+
+- Staff:
+	+ MUST BE LOGGED IN.
+	+ Create Car for their Brand.
+	+ Update Car for their Brand.
+	+ Delete Car for their Brand.
+	+ View Car in their Brand.
+	+ View Car Detail in their Brand.

@@ -1,0 +1,32 @@
+﻿@page "{id:int}"
+@model RazorWeb.Pages.Cars.EditModel
+@{
+    ViewData["Title"] = "Edit Car";
+}
+
+<h2>Edit Car</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Car.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input asp-for="Car.Name" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Brand</label>
+        @if (Model.IsStaff)
+        {
+            <input type="hidden" asp-for="Car.BrandId" />
+            <input class="form-control" value="@Model.BrandList.First().Text" disabled />
+        }
+        else
+        {
+            <select asp-for="Car.BrandId" asp-items="Model.BrandList" class="form-select"></select>
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a asp-page="Index" class="btn btn-secondary">Back</a>
+</form>

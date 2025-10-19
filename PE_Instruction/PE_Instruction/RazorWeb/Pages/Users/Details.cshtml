@@ -1,0 +1,30 @@
+﻿@page "{id:int}"
+@model RazorWeb.Pages.Users.DetailsModel
+@{
+    ViewData["Title"] = "User Details";
+}
+
+<h2>User Details</h2>
+
+<div class="card p-3">
+    <dl class="row">
+        <dt class="col-sm-3">ID</dt>
+        <dd class="col-sm-9">@Model.User.Id</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.User.Email</dd>
+
+        <dt class="col-sm-3">Role</dt>
+        <dd class="col-sm-9">
+            @Model.User.Role.ToString() 
+        </dd>
+
+        <dt class="col-sm-3">Brand</dt>
+        <dd class="col-sm-9">
+            @Model.User.Brand?.Name ?? "-" 
+        </dd>
+    </dl>
+
+    <a asp-page="Edit" asp-route-id="@Model.User.Id" class="btn btn-warning">Edit</a>
+    <a asp-page="Index" class="btn btn-secondary">Back</a>
+</div>

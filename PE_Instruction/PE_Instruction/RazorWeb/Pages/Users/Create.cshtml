@@ -1,0 +1,63 @@
+﻿@page
+@model RazorWeb.Pages.Users.CreateModel
+@{
+    ViewData["Title"] = "Create User";
+}
+
+<h2 class="mb-3">Add New User</h2>
+
+<form method="post" class="card p-3">
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input asp-for="User.Email" class="form-control" type="email" required />
+        <span asp-validation-for="User.Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input asp-for="User.Password" class="form-control" type="password" required />
+        <span asp-validation-for="User.Password" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Role</label>
+        <select asp-for="User.Role" class="form-select" id="roleSelect">
+            <option value="@((int)Business.UserRole.Admin)">Admin</option>
+            <option value="@((int)Business.UserRole.Staff)">Staff</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Brand (for Staff)</label>
+        <select asp-for="User.BrandId" class="form-select" id="brandSelect">
+            <option value="">-- None --</option>
+            @foreach (var brand in Model.Brands)
+            {
+                <option value="@brand.Id">@brand.Name</option>
+            }
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        const roleSelect = document.getElementById('roleSelect');
+        const brandSelect = document.getElementById('brandSelect');
+
+        function toggleBrand() {
+            if (roleSelect.value === "@((int)Business.UserRole.Admin)") {
+                brandSelect.value = "";
+                brandSelect.disabled = true;
+            } else {
+                brandSelect.disabled = false;
+            }
+        }
+
+        toggleBrand();
+        roleSelect.addEventListener('change', toggleBrand);
+    </script>
+}
