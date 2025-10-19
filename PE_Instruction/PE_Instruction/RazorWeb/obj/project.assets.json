@@ -5092,11 +5092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
+      "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
       "projectName": "RazorWeb",
-      "projectPath": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
+      "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
       "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-      "outputPath": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\obj\\",
+      "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5117,14 +5117,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
-              "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
+            "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+              "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
             },
-            "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
-              "projectPath": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
+            "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
+              "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
             },
-            "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
-              "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj"
+            "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
+              "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj"
             }
           }
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RazorWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4387491449f8c5bd3295b7ddbcf4f823336b6d32")]
 [assembly: System.Reflection.AssemblyProductAttribute("RazorWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RazorWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

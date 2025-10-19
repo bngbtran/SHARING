@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj": {}
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj": {}
   },
   "projects": {
-    "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
+        "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
+        "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\obj\\",
+        "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,14 +98,14 @@
         }
       }
     },
-    "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj",
+        "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\obj\\",
+        "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -126,8 +126,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
               }
             }
           }
@@ -196,14 +196,14 @@
         }
       }
     },
-    "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj": {
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
+        "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
         "projectName": "RazorWeb",
-        "projectPath": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
+        "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\RazorWeb.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PE_Instruction\\PE_Instruction\\RazorWeb\\obj\\",
+        "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\RazorWeb\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -224,14 +224,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
               },
-              "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
               },
-              "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj"
               }
             }
           }
@@ -303,14 +303,14 @@
         }
       }
     },
-    "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj",
+        "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj",
         "projectName": "Repository",
-        "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj",
+        "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\Repository.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PE_Instruction\\PE_Instruction\\Repository\\obj\\",
+        "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -331,11 +331,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj"
               },
-              "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
+              "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\DataAccess\\DataAccess.csproj"
               }
             }
           }

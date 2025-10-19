@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {}
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {}
   },
   "projects": {
-    "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
+    "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
+        "projectUniqueName": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
+        "projectPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PE_Instruction\\PE_Instruction\\Business\\obj\\",
+        "outputPath": "D:\\SHARING\\PE_Instruction\\PE_Instruction\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
