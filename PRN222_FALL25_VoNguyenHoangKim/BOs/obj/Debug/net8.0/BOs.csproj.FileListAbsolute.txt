@@ -1,0 +1,14 @@
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\bin\Debug\net8.0\BOs.deps.json
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\bin\Debug\net8.0\BOs.runtimeconfig.json
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\bin\Debug\net8.0\BOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\bin\Debug\net8.0\BOs.pdb
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.csproj.AssemblyReference.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.AssemblyInfoInputs.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.AssemblyInfo.cs
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.csproj.CoreCompileInputs.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\refint\BOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.pdb
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\BOs.genruntimeconfig.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\BOs\obj\Debug\net8.0\ref\BOs.dll

@@ -1,0 +1,122 @@
+﻿@page
+@model FruitManagement.Pages.CRUD.IndexModel
+@{
+    ViewData["Title"] = "Fruit List";
+}
+
+<style>
+    .btn {
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+        background: #3F6C45;
+        color: #FFFFFF;
+    }
+
+    .table {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .icon-edit {
+        color: #f0ad4e;
+        border: 2px solid #f0ad4e;
+    }
+
+        .icon-edit:hover {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+    .icon-detail {
+        color: #5bc0de;
+        border: 2px solid #5bc0de;
+    }
+
+        .icon-detail:hover {
+            background-color: #5bc0de;
+            color: white;
+        }
+
+    .icon-delete {
+        color: #d9534f;
+        border: 2px solid #d9534f;
+    }
+
+        .icon-delete:hover {
+            background-color: #d9534f;
+            color: white;
+        }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Fruit List</h2>
+
+    <div class="d-flex justify-content-end mb-3">
+        <a asp-page="Create" class="btn btn-success">+ Add Fruit</a>
+    </div>
+
+    <table class="table table-striped table-bordered align-middle text-center">
+        <thead class="table-success">
+            <tr>
+                <th>Name</th>
+                <th>Price (VNĐ)</th>
+                <th>Quantity</th>
+                <th style="width:25%">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Fruits != null && Model.Fruits.Any())
+            {
+                @foreach (var item in Model.Fruits)
+                {
+                    <tr>
+                        <td>@item.Name</td>
+                        <td>@string.Format("{0:N0} VNĐ", item.Price)</td>
+                        <td>@item.Quantity</td>
+                        <td>
+                            <a asp-page="Edit" asp-route-id="@item.Id"
+                               title="Edit"
+                               style="border:1px solid #f0ad4e; border-radius:50%; width:36px; height:36px;
+              display:inline-flex; align-items:center; justify-content:center;
+              color:#f0ad4e; background-color:#ffffff; text-decoration:none; margin-right:4px;
+              transition:all 0.25s ease;"
+                               onmouseover="this.style.backgroundColor='#f0ad4e'; this.style.color='white';"
+                               onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#f0ad4e';">
+                                <i class="pi pi-pencil" style="font-size:1rem;"></i>
+                            </a>
+
+                            <a asp-page="Details" asp-route-id="@item.Id"
+                               title="Details"
+                               style="border:1px solid #5bc0de; border-radius:50%; width:36px; height:36px;
+              display:inline-flex; align-items:center; justify-content:center;
+              color:#5bc0de; background-color:#ffffff; text-decoration:none; margin-right:4px;
+              transition:all 0.25s ease;"
+                               onmouseover="this.style.backgroundColor='#5bc0de'; this.style.color='white';"
+                               onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#5bc0de';">
+                                <i class="pi pi-eye" style="font-size:1rem;"></i>
+                            </a>
+
+                            <a asp-page="Delete" asp-route-id="@item.Id"
+                               title="Delete"
+                               style="border:1px solid #d9534f; border-radius:50%; width:36px; height:36px;
+              display:inline-flex; align-items:center; justify-content:center;
+              color:#d9534f; background-color:#ffffff; text-decoration:none;
+              transition:all 0.25s ease;"
+                               onmouseover="this.style.backgroundColor='#d9534f'; this.style.color='white';"
+                               onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#d9534f';">
+                                <i class="pi pi-trash" style="font-size:1rem;"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="4" class="text-center text-muted">Not Found !!!</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

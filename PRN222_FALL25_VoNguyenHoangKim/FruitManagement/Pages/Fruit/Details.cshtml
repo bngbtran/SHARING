@@ -1,0 +1,33 @@
+﻿@page "{id:int}"
+@model FruitManagement.Pages.CRUD.DetailsModel
+@{
+    ViewData["Title"] = "Fruit Details";
+}
+
+<style>
+    .btn {
+        border-radius: 8px;
+        color: #FFFFFF;
+    }
+
+    .detail-card {
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Fruit Details</h2>
+
+    <div class="detail-card mb-3 bg-light">
+        <p><strong>Name:</strong> @Model.Fruit.Name</p>
+        <p><strong>Price:</strong> @String.Format("{0:N0} VNĐ", Model.Fruit.Price)</p>
+        <p><strong>Quantity:</strong> @Model.Fruit.Quantity</p>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+        <a asp-page="Edit" asp-route-id="@Model.Fruit.Id" class="btn btn-success">Edit</a>
+        <a asp-page="Index" class="btn btn-secondary">Back</a>
+    </div>
+</div>

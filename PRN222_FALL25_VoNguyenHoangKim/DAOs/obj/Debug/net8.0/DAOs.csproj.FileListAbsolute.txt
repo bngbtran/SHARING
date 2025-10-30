@@ -1,0 +1,17 @@
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\DAOs.deps.json
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\DAOs.runtimeconfig.json
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\DAOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\DAOs.pdb
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\BOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\bin\Debug\net8.0\BOs.pdb
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.csproj.AssemblyReference.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.AssemblyInfoInputs.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.AssemblyInfo.cs
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.csproj.CoreCompileInputs.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.csproj.Up2Date
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\refint\DAOs.dll
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.pdb
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\DAOs.genruntimeconfig.cache
+C:\Users\vnhk1\Desktop\PRN222_FALL25_VoNguyenHoangKim\DAOs\obj\Debug\net8.0\ref\DAOs.dll

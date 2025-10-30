@@ -1,0 +1,58 @@
+﻿@page
+@model FruitManagement.Pages.CRUD.CreateModel
+@{
+    ViewData["Title"] = "Create Fruit";
+}
+
+<style>
+    .btn {
+        border-radius: 8px;
+        transition: 0.2s;
+        color: #FFFFFF;
+    }
+
+    .form-control {
+        border-radius: 8px;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Create Fruit</h2>
+
+    <form method="post" class="shadow p-4 rounded bg-light">
+        <div class="mb-3">
+            <label asp-for="Fruit.Name" class="form-label fw-bold"></label>
+            <input asp-for="Fruit.Name" class="form-control" />
+            <span asp-validation-for="Fruit.Name" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Fruit.Price" class="form-label fw-bold"></label>
+            <div class="input-group">
+                <input asp-for="Fruit.Price"
+                       class="form-control"
+                       type="number"
+                       min="0"
+                       step="1"
+                       value="@Model.Fruit.Price.ToString("0")" />
+                <span class="input-group-text">VNĐ</span>
+            </div>
+            <span asp-validation-for="Fruit.Price" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Fruit.Quantity" class="form-label fw-bold"></label>
+            <input asp-for="Fruit.Quantity" class="form-control" />
+            <span asp-validation-for="Fruit.Quantity" class="text-danger"></span>
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+            <a asp-page="Index" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

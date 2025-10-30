@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!-- Page này sẽ xuất hiện đầu tiên khi chạy chương trình -->
+<div class="d-flex flex-column justify-content-center align-items-center mt-5">
+    <h1 class="mb-3 fw-bold" style="color: #3F6C45;">Welcome to Fruit Management !!!</h1>
+    <h4 class="mb-4">
+        <a asp-page="/Fruit/Index" class="btn btn-success">
+            Go to Manage Fruit
+        </a>
+    </h4>
+</div>
+
+<style>
+    .btn {
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+        background: #3F6C45;
+        color: #FFFFFF;
+    }
+</style>
