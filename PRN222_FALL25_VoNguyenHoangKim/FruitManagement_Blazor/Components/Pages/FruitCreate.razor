@@ -1,0 +1,49 @@
+﻿@page "/fruits/create"
+@inject Repository.IFruitRepository FruitRepository
+@inject NavigationManager Navigation
+
+<h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Create Fruit</h2>
+
+@if (Fruit != null)
+{
+    <EditForm Model="Fruit" OnValidSubmit="HandleValidSubmit" FormName="CreateFruitForm" class="shadow p-4 rounded bg-light">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Name</label>
+            <InputText @bind-Value="Fruit.Name" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Price</label>
+            <div class="input-group">
+                <InputNumber @bind-Value="Fruit.Price" class="form-control" min="0" step="1" />
+                <span class="input-group-text">VNĐ</span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label fw-bold">Quantity</label>
+            <InputNumber @bind-Value="Fruit.Quantity" class="form-control" min="0" />
+        </div>
+
+        <div class="d-flex justify-content-end gap-2">
+            <button type="submit" class="btn btn-success">Create</button>
+        </div>
+    </EditForm>
+}
+else
+{
+    <p class="text-muted">Error initializing form!</p>
+}
+
+@code {
+    private BOs.Fruits Fruit = new BOs.Fruits();
+
+    private void HandleValidSubmit()
+    {
+        FruitRepository.Add(Fruit);
+        Navigation.NavigateTo("/fruits");
+    }
+}

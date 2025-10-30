@@ -1,0 +1,89 @@
+﻿@page "/fruits"
+@inject NavigationManager Navigation
+@inject Repository.IFruitRepository FruitRepository
+
+<h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Fruit List</h2>
+
+<table class="table table-striped table-bordered align-middle text-center">
+    <thead class="table-success">
+        <tr>
+            <th>Name</th>
+            <th>Price (VNĐ)</th>
+            <th>Quantity</th>
+            <th style="width:25%">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Fruits != null && Fruits.Any())
+        {
+            @foreach (var item in Fruits)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Price.ToString("N0") VNĐ</td>
+                    <td>@item.Quantity</td>
+                    <td class="action gap-4">
+                        <a class="action-link edit"
+                           href="@("/fruits/edit/" + item.Id)"
+                           title="Edit">
+                            Edit
+                        </a>
+
+                        <a class="action-link detail"
+                           href="@("/fruits/details/" + item.Id)"
+                           title="Details">
+                            Details
+                        </a>
+
+                        <a class="action-link delete"
+                           href="@("/fruits/delete/" + item.Id)"
+                           title="Delete"
+                           @onclick='() => DeleteFruit(item.Id)'>
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center text-muted">Not Found !!!</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@code {
+    private List<BOs.Fruits> Fruits = new List<BOs.Fruits>();
+
+    protected override void OnInitialized()
+    {
+        LoadFruits();
+    }
+
+    private void LoadFruits()
+    {
+        Fruits = FruitRepository.GetAll();
+    }
+
+    private void DeleteFruit(int id)
+    {
+        if (id > 0)
+        {
+            FruitRepository.Delete(id);
+            LoadFruits(); // reload list after deletion
+        }
+    }
+
+    private void GoToCreate()
+    {
+        Navigation.NavigateTo("/fruits/create");
+    }
+}
+
+    <style>
+    .action {
+        text-decoration: none;
+    }
+    </style>

@@ -1,0 +1,32 @@
+﻿@page "/fruits/details/{Id:int}"
+@inject NavigationManager Navigation
+@inject Repository.IFruitRepository FruitRepository
+
+<h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Fruit Details</h2>
+
+@if (Fruit != null)
+{
+    <div class="detail-card mb-3 bg-light p-4 rounded shadow-sm">
+        <p><strong>Name:</strong> @Fruit.Name</p>
+        <p><strong>Price:</strong> @Fruit.Price.ToString("N0") VNĐ</p>
+        <p><strong>Quantity:</strong> @Fruit.Quantity</p>
+    </div>
+
+    <div class="d-flex justify-content-end gap-2">
+        <button class="btn btn-success" @onclick='() => Navigation.NavigateTo("/fruits/edit/" + Fruit.Id)'>Edit</button>
+    </div>
+}
+else
+{
+    <p class="text-muted">Fruit not found!</p>
+}
+
+@code {
+    [Parameter] public int Id { get; set; }
+    private BOs.Fruits? Fruit;
+
+    protected override void OnInitialized()
+    {
+        Fruit = FruitRepository.GetById(Id);
+    }
+}
