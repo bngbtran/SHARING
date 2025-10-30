@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj": {}
+    "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj": {}
   },
   "projects": {
-    "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj": {
+    "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj",
+        "projectUniqueName": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj",
         "projectName": "BOs",
-        "projectPath": "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj",
+        "projectPath": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\obj\\",
+        "outputPath": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -98,14 +98,14 @@
         }
       }
     },
-    "D:\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj": {
+    "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj",
+        "projectUniqueName": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj",
         "projectName": "DAOs",
-        "projectPath": "D:\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj",
+        "projectPath": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\DAOs.csproj",
         "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\obj\\",
+        "outputPath": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\DAOs\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -126,8 +126,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj": {
-                "projectPath": "D:\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj"
+              "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj": {
+                "projectPath": "D:\\SHARING\\PRN222_FALL25_VoNguyenHoangKim\\BOs\\BOs.csproj"
               }
             }
           }
