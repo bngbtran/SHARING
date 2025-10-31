@@ -1,0 +1,74 @@
+﻿@using DataAccess.Models
+@page "/fruits/restore"
+@inject IFruitsService FruitService
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-center mb-4 text-success fw-bold" style="color: #3F6C45">Fruit Restore</h2>
+        <button class="btn btn-secondary mb-3" @onclick="@(() => Navigation.NavigateTo("/fruits"))">
+            <i class="bi bi-arrow-left-circle"></i> Back to List
+        </button>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover shadow-sm">
+            <thead class="table-success">
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (deletedFruits.Count == 0)
+                {
+                    <tr>
+                        <td colspan="5" class="text-center text-muted py-3">Not Found !!!</td>
+                    </tr>
+                }
+                else
+                {
+                    @for (int i = 0; i < deletedFruits.Count; i++)
+                    {
+                        var fruit = deletedFruits[i];
+                        <tr class="@(fruit.Quantity == 0 ? "table-danger" : "table-light")">
+                            <td>@(i + 1)</td>
+                            <td>@fruit.Name</td>
+                            <td>@fruit.Price.ToString("N0") VNĐ</td>
+                            <td>@fruit.Quantity</td>
+                            <td>
+                                <button class="btn btn-success btn-sm" @onclick="() => RestoreFruit(fruit.Id)">
+                                    Restore
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@code {
+    private List<Fruits> deletedFruits = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        deletedFruits = (await FruitService.GetDeletedFruitsAsync()).ToList();
+    }
+
+    private async Task RestoreFruit(int id)
+    {
+        var confirm = await JS.InvokeAsync<bool>("confirm", "Are you sure you want to restore this fruit ???");
+        if (confirm)
+        {
+            await FruitService.RestoreFruitAsync(id);
+            deletedFruits = (await FruitService.GetDeletedFruitsAsync()).ToList();
+            StateHasChanged();
+        }
+    }
+}

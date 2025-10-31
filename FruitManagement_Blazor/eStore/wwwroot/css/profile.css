@@ -1,0 +1,127 @@
+﻿/* Profile Page Styling */
+.profile-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+}
+
+.profile-card {
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 40px;
+    width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+.profile-header h1 {
+    font-size: 1.8rem;
+    color: #3498db;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.profile-details {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+    .profile-details p {
+        margin: 12px 0;
+    }
+
+    .profile-details strong {
+        color: #34495e;
+    }
+
+.loading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #95a5a6;
+    text-align: center;
+}
+
+/* Edit Form Styling */
+.profile-edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+    .profile-edit-form label {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-top: 10px;
+        color: #34495e;
+    }
+
+    .profile-edit-form input {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        color: #34495e;
+        background-color: #f9f9f9;
+        transition: border-color 0.3s;
+    }
+
+        .profile-edit-form input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+    .profile-edit-form button {
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .profile-edit-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .profile-edit-form button:active {
+            background-color: #1f6fa6;
+        }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-card {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .profile-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+}

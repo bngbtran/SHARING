@@ -1,0 +1,63 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build files
+bin/
+obj/
+out/
+publish/
+dist/
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Dependencies
+packages/
+!packages/*.config
+*.nupkg
+*.snupkg
+.nuget/
+
+# ASP.NET Core
+wwwroot/node_modules/
+wwwroot/lib/
+appsettings*.json
+
+# Blazor WebAssembly
+/Client/dist/
+/Client/node_modules/
+/Client/out/
+
+# Class Libraries
+**/bin/
+**/obj/
+**/out/
+
+# Logs and Debugging
+*.log
+*.tlog
+*.dmp
+*.bak
+*.swp
+*.swo
+*.sln.ide
+
+# Rider and Resharper
+.idea/
+*.DotSettings.user
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+appsettings*.json
+!appsettings.json.example
